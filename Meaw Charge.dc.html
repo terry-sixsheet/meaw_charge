@@ -18,7 +18,6 @@
   ::selection { background: #0E80EE; color: #fff; }
   a { text-decoration: none; color: inherit; }
   input, select, textarea, button { font-family: 'Sarabun', sans-serif; }
-  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
   @media (max-width: 880px) {
     .mc-desktop { display: none !important; }
     .mc-burger { display: flex !important; }
@@ -66,27 +65,9 @@
   <!-- ===== HERO ===== -->
   <section style="background:linear-gradient(135deg,#2EA6FB 0%,#0A6FE0 60%,#0A5AC4 100%); position:relative; overflow:hidden;">
     <div style="position:absolute; inset:0; background:radial-gradient(circle at 85% 15%, rgba(255,255,255,0.22), transparent 45%);"></div>
-    <div style="max-width:1200px; margin:0 auto; padding:56px 24px 64px; display:flex; align-items:center; gap:40px; flex-wrap:wrap; position:relative; z-index:1;">
-      <div style="flex:1 1 420px; min-width:300px; color:#fff;">
-        <h1 style="font-family:'Mitr',sans-serif; font-weight:600; font-size:clamp(34px,5.2vw,54px); line-height:1.14; margin-bottom:18px; text-shadow:0 2px 12px rgba(6,42,120,0.25);">
-          Meaw Charge เพื่อนแท้<br>แก้แบตหมด <span style="color:#FFD447;">🐾</span><br>
-          <span style="font-size:0.78em; color:#FFE07A;">พาวเวอร์แบงก์ให้เช่าระบบชาร์จเร็ว!</span>
-        </h1>
-        <p style="font-size:clamp(16px,2vw,19px); line-height:1.65; color:rgba(255,255,255,0.92); max-width:520px; margin-bottom:26px;">
-          ชาร์จไวทันใจ <b>80% ภายใน 30 นาที</b> ใช้งานได้ทุกที่ทุกเวลา ด้วยไอเดียน้องแมวสุดน่ารักสไตล์เอเชียตะวันออกเฉียงใต้
-        </p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:32px;">
-          <sc-for list="{{ heroPills }}" as="p" hint-placeholder-count="4">
-            <div style="display:flex; align-items:center; gap:8px; background:rgba(255,255,255,0.16); border:1px solid rgba(255,255,255,0.28); backdrop-filter:blur(6px); padding:9px 15px; border-radius:999px; font-size:14px; color:#fff;">
-              <span style="font-size:16px;">{{ p.icon }}</span>{{ p.text }}
-            </div>
-          </sc-for>
-        </div>
-        <a href="#contact" style="display:inline-block; background:#FBC419; color:#17357C; padding:15px 40px; border-radius:999px; font-family:'Mitr',sans-serif; font-weight:600; font-size:17px; box-shadow:0 12px 26px -8px rgba(251,196,25,0.6);" style-hover="background:#F5B800">ติดต่อสอบถาม</a>
-      </div>
-      <div style="flex:1 1 420px; min-width:300px; display:flex; justify-content:center;">
-        <image-slot id="mc-hero" src="assets/hero.png" style="width:100%; max-width:560px; height:auto; aspect-ratio:16/12; animation:floaty 6s ease-in-out infinite;" shape="rounded" radius="24" placeholder="ภาพน้องแมว + ตู้ชาร์จ (hero)"></image-slot>
-      </div>
+    <div style="max-width:1100px; margin:0 auto; padding:44px 24px 52px; display:flex; flex-direction:column; align-items:center; gap:28px; position:relative; z-index:1;">
+      <image-slot id="mc-hero" src="assets/hero.png" fit="contain" style="width:100%; height:auto; aspect-ratio:1038/338;" shape="rounded" radius="20" placeholder="Meaw Charge เพื่อนแท้แก้แบตหมด — hero banner"></image-slot>
+      <a href="#contact" style="display:inline-block; background:#FBC419; color:#17357C; padding:15px 44px; border-radius:999px; font-family:'Mitr',sans-serif; font-weight:600; font-size:17px; box-shadow:0 12px 26px -8px rgba(251,196,25,0.6);" style-hover="background:#F5B800">ติดต่อสอบถาม</a>
     </div>
   </section>
 
@@ -132,7 +113,7 @@
 
   <!-- ===== PRODUCT FAMILY BAND ===== -->
   <section style="max-width:1280px; margin:0 auto; padding:0 24px 40px;">
-    <image-slot id="mc-family" src="assets/family.png" style="width:100%; height:auto; aspect-ratio:24/9;" shape="rounded" radius="24" placeholder="ภาพรวมผลิตภัณฑ์ — Powering Every Journey in Thailand"></image-slot>
+    <image-slot id="mc-family" src="assets/family.png" fit="contain" style="width:100%; height:auto; aspect-ratio:1038/338;" shape="rounded" radius="24" placeholder="ภาพรวมผลิตภัณฑ์ — Powering Every Journey in Thailand"></image-slot>
   </section>
 
   <!-- ===== WHY US ===== -->
@@ -186,7 +167,7 @@
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px;">
       <sc-for list="{{ regions }}" as="r" hint-placeholder-count="4">
         <div style="background:#fff; border:1px solid #E7EEF7; border-radius:22px; padding:20px; box-shadow:0 16px 34px -26px rgba(14,128,238,0.5);">
-          <image-slot id="{{ r.slot }}" src="{{ r.img }}" fit="contain" style="width:100%; height:auto; aspect-ratio:4/3; margin-bottom:14px;" shape="rounded" radius="16" placeholder="{{ r.ph }}"></image-slot>
+          <image-slot id="{{ r.slot }}" src="{{ r.img }}" fit="contain" style="width:100%; height:auto; aspect-ratio:1/1; margin-bottom:14px;" shape="rounded" radius="16" placeholder="{{ r.ph }}"></image-slot>
           <h3 style="font-family:'Mitr',sans-serif; font-weight:500; font-size:18px; color:#17357C; text-align:center;">{{ r.title }}</h3>
         </div>
       </sc-for>
@@ -354,13 +335,6 @@ class Component extends DCLogic {
       menuOpen: this.state.menuOpen,
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       closeMenu: () => this.setState({ menuOpen: false }),
-
-      heroPills: [
-        { icon: '⚡', text: 'ชาร์จไว 80% ใน 30 นาที' },
-        { icon: '🛡️', text: 'ปลอดภัย มีมาตรฐาน' },
-        { icon: '📍', text: 'มีจุดบริการทั่วเมือง' },
-        { icon: '👍', text: 'ใช้งานง่าย' },
-      ],
 
       steps: [
         { num: '1', icon: 'assets/step1.png', title: 'สแกนเริ่มการเช่า', en: 'Scan QR code to get started' },
